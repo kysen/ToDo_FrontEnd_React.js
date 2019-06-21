@@ -11,7 +11,7 @@ class TodoItem extends React.Component {
 
   toggleDone = () => {
     fetch(
-      `https://todo-list-api-python-kmj.herokuapp.com/todo/${
+      `https://todo-list-react-kmj.herokuapp.com/todos/todo/${
         this.props.item.id
       }`,
       {
