@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://todo-list-react-kmj.herokuapp.com/todos")
+    fetch("http://127.0.0.1:5000/todos")
       .then(response => response.json())
       .then(data =>
         this.setState({
@@ -44,7 +44,7 @@ class App extends React.Component {
 
     Axios({
       method: "post",
-      url: "https://todo-list-react-kmj.herokuapp.com/todos/add-todo",
+      url: "http://127.0.0.1:5000/add-todo",
       headers: { "content-type": "application/json" },
       data: {
         title: this.state.todo,
@@ -61,7 +61,7 @@ class App extends React.Component {
   };
 
   deleteItem = id => {
-    fetch(`https://todo-list-react-kmj.herokuapp.com/todos/delete/${id}`, {
+    fetch(`http://127.0.0.1:5000/todo/${id}`, {
       method: "DELETE"
     })
       .then(

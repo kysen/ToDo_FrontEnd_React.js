@@ -10,19 +10,14 @@ class TodoItem extends React.Component {
   }
 
   toggleDone = () => {
-    fetch(
-      `https://todo-list-react-kmj.herokuapp.com/todos/todo/${
-        this.props.item.id
-      }`,
-      {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title: this.props.item.title,
-          done: !this.state.done
-        })
-      }
-    )
+    fetch(`http://127.0.0.1:5000/todo/${this.props.item.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: this.props.item.title,
+        done: !this.state.done
+      })
+    })
       .then(
         this.setState({
           done: !this.state.done
